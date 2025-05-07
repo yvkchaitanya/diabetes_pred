@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+
+    {% if error %}
+        <p style="color:red;">Error: {{ error }}</p>
+    {% else %}
+        <p><strong>Prediction:</strong> {{ prediction_text }}</p>
+        <p><strong>Probability of Diabetes:</strong> {{ prediction_prob }}%</p>
+        <h3>Input Data:</h3>
+        <ul>
+            {% for key, value in form_data.items() %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <a href="/">Back to Form</a>
+</body>
+</html>
